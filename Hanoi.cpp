@@ -1,4 +1,4 @@
-//hanoi.cpp
+//Hanoi.cpp
 
 #include <iostream>
 
