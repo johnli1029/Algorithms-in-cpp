@@ -71,4 +71,3 @@ void timeclock(int N, int k, double p,double (*pf)(int,int,double))
 	clock_t usage=clock()-start;
 	cout << "usage: " << usage/1000.0 << " s.\n" << endl;
 }
-
