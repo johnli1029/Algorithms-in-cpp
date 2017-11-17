@@ -1,0 +1,36 @@
+// 2017.11.14
+// Fisher–Yates shuffle
+
+
+// 几种同类洗牌算法(code in C++)
+
+	//Fisher and Yates' original method
+
+void FYShuffle (int arr[],int n)
+{
+	srand(time(0));
+	for(int i = n-1; i > 0; i--)
+	{
+		int j = (int) (rand() / (double) RAND_MAX * (i+1)) ; // j = [0,i]
+		int swap = arr[j];
+		arr[j] = arr [i];
+		arr[i] = swap;
+	}
+}
+
+	// Sattolo's Algorithm
+void SattoloShuffle (int arr[],int n)
+{
+	srand(time(0));
+	for(int i = n-1; i > 0; i--)
+	{
+		int j = (int) (rand() / (double) RAND_MAX * (i)) ; // j = [0,i)
+		int swap = arr[j];
+		arr[j] = arr [i];
+		arr[i] = swap;
+	}
+		
+}
+
+// 这两种算法最大的区别在于前者有可能出现洗牌后元素仍处于原来位置的情况，而后者在一轮循环后必然不会回到原有位置。 
+// 后者结果((n-1)!)为前者(n!)的子集
